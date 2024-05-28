@@ -1,5 +1,5 @@
 import { Client, GatewayIntentBits } from "discord.js";
-import { app } from "./router/route";
+import { app } from "./route";
 require("dotenv").config();
 
 export const client = new Client({
