@@ -9,6 +9,7 @@
     "start": "NODE_ENV=production prettier --write . && prettier --check . && bun run src/index.ts"
   },
   "dependencies": {
+    "@elysiajs/html": "^1.0.2",
     "@elysiajs/stream": "^1.0.2",
     "@elysiajs/swagger": "^1.0.5",
     "@eslint/js": "^9.3.0",
