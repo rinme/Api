@@ -1,8 +1,8 @@
 import { Elysia, NotFoundError } from "elysia";
 import { swagger } from "@elysiajs/swagger";
-import { getGreet } from "../require/etc/getGreet";
-import { getData, getAvatar } from "../require/discord/getUser";
-import { getDate, getTime } from "../require/etc/getTime";
+import { getGreet } from "../event/etc/getGreet";
+import { getData, getAvatar } from "../event/discord/getUser";
+import { getDate, getTime } from "../event/etc/getTime";
 import { apiConfig } from "../config/docConfig";
 
 const users = new Elysia().group("/user", (app) =>
