@@ -1,0 +1,32 @@
+{
+  "name": "api",
+  "version": "1.0.50",
+  "scripts": {
+    "dev": "bun run --watch src/index.ts",
+    "format": "prettier --write . && prettier --check .",
+    "build": "bun build src/index.ts",
+    "test": "bun test",
+    "start": "NODE_ENV=production prettier --write . && prettier --check . && bun run src/index.ts"
+  },
+  "dependencies": {
+    "@elysiajs/stream": "^1.0.2",
+    "@elysiajs/swagger": "^1.0.5",
+    "@eslint/js": "^9.3.0",
+    "discord.js": "^14.15.2",
+    "dotenv": "^16.4.5",
+    "elysia": "latest",
+    "eslint": "^9.3.0",
+    "eslint-config-prettier": "^9.1.0",
+    "typescript": "^5.4.5",
+    "typescript-eslint": "^7.10.0"
+  },
+  "devDependencies": {
+    "bun-types": "latest",
+    "prettier": "3.2.5"
+  },
+  "module": "src/index.js",
+  "type": "module",
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  }
+}
