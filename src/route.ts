@@ -4,6 +4,7 @@ import { apiConfig } from "./config/docConfig";
 import { users } from "./router/user";
 import { etc } from "./router/etc";
 import { getGreet } from "./event/etc/getGreet";
+import { pay } from "./router/payment";
 
 export const app = new Elysia()
   .use(
@@ -13,6 +14,7 @@ export const app = new Elysia()
   )
   .use(users)
   .use(etc)
+  .use(pay)
   .get("/", () => `${getGreet()}, Anon!`, {
     detail: {
       tags: ["Etc"],
