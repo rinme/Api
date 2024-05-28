@@ -5,6 +5,8 @@ import { users } from "./router/user";
 import { etc } from "./router/etc";
 import { getGreet } from "./event/etc/getGreet";
 import { pay } from "./router/payment";
+import { html } from "@elysiajs/html";
+const PORT: string | 8080 = Bun.env.PORT || 8080;
 
 export const app = new Elysia()
   .use(
@@ -12,6 +14,7 @@ export const app = new Elysia()
       ...apiConfig.swagger,
     }),
   )
+  .use(html())
   .use(users)
   .use(etc)
   .use(pay)
@@ -23,4 +26,4 @@ export const app = new Elysia()
   .onError(({ code }) => {
     if (code === "NOT_FOUND") return "sorry :( i can't find anything";
   })
-  .listen(8080);
+  .listen(PORT);
