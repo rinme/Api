@@ -10,6 +10,7 @@ type User = {
 
 // get data from id
 export const getData = async (id: string) => {
+
   try {
     const user = await client.users.fetch(id);
     let users: User[] = [
@@ -20,18 +21,8 @@ export const getData = async (id: string) => {
         avatar: user.displayAvatarURL({ extension: "png" }),
       },
     ];
-    return users;
+    return users
   } catch (error) {
     return new NotFoundError();
-  }
-};
-
-// get avatar from id
-export const getAvatar = async (id: string) => {
-  try {
-    const user = await client.users.fetch(id);
-    return user.displayAvatarURL({ extension: "png" });
-  } catch (error) {
-    return "Couldn't find avatar nor user";
   }
 };
